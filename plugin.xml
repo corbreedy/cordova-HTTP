@@ -57,7 +57,17 @@
         <framework src="Security.framework" />
         <framework src="SystemConfiguration.framework" />
     </platform>
-
+    <!--browser -->
+  <platform name="browser">
+    <config-file target="config.xml" parent="/*">
+      <feature name="CordovaHttpPlugin">
+        <param name="browser-package" value="CordovaHttpPlugin"/>
+      </feature>
+    </config-file>
+    <js-module src="src/browser/CordovaHttpPlugin.js" name="CordovaHttpPluginProxy">
+      <runs/>
+    </js-module>
+  </platform>
     <!--android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">

@@ -6,18 +6,20 @@
     "id": "cordova-plugin-http",
     "platforms": [
       "ios",
-      "android"
+      "android",
+      "browser"
     ]
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wymsee/cordova-HTTP.git"
+    "url": "git+https://github.com/corbreedy/cordova-HTTP.git"
   },
   "keywords": [
     "cordova",
     "device",
     "ecosystem:cordova",
     "cordova-ios",
+    "cordova-browser",
     "cordova-android"
   ],
   "engines": [
@@ -26,10 +28,10 @@
       "version": ">=3.0.0"
     }
   ],
-  "author": "Wymsee",
+  "author": "Corbreedy",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wymsee/cordova-HTTP/issues"
+    "url": "https://github.com/corbreedy/cordova-HTTP/issues"
   },
-  "homepage": "https://github.com/wymsee/cordova-HTTP#readme"
+  "homepage": "https://github.com/corbreedy/cordova-HTTP#readme"
 }
