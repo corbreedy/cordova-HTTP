@@ -1,3 +1,16 @@
+cordova.define("cordova-plugin-http.CordovaHttpPluginProxy", function(require, exports, module) { function scan(success, error) {
+    var code = window.prompt("Enter barcode value (empty value will fire the error handler):");
+    if(code) {
+        var result = {
+            text:code,
+            format:"Fake",
+            cancelled:false
+        };
+        success(result);
+    } else {
+        error("No barcode");
+    }
+}
 
 function get(success,errorCallback,vars){
     var theUrl=vars[0];
@@ -13,11 +26,11 @@ function get(success,errorCallback,vars){
     xmlHttp.onreadystatechange = function() {
 	console.log("readyState",xmlHttp.readyState)
 	console.log("readyStatus",xmlHttp.status)
-        if (xmlHttp.readyState == 4 && xmlHttp.status == 0){
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200){
 	    //	    console.log(request.getAllResponseHeaders());
 	    console.log("response",xmlHttp.responseText);
             var result = {
-		data:xmlHttp.responseText,
+		text:xmlHttp.responseText,
 		status:200
 	    };
 	    success(result);
@@ -36,8 +49,11 @@ function encode(type, data, success, errorCallback) {
 }
 
 module.exports = {
+    scan: scan,
     get: get,
     encode: encode
 };
 
 require("cordova/exec/proxy").add("CordovaHttpPlugin",module.exports);
+
+});
